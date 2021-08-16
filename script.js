@@ -11,5 +11,13 @@ function computerPlay() {
     }
 }
 
+// function to make input case insensitive
+function formatPlayerSelection(playerSelection) {
+    // lowercase all the characters
+    let formattedPlayerSelection = playerSelection.toLowerCase();
+    // replace the first character with the capitazed first character of that string
+    return formattedPlayerSelection.replace(formattedPlayerSelection[0],formattedPlayerSelection.toUpperCase()[0]);
+}
+
 
 game();
