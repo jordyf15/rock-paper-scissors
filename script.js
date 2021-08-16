@@ -19,5 +19,56 @@ function formatPlayerSelection(playerSelection) {
     return formattedPlayerSelection.replace(formattedPlayerSelection[0],formattedPlayerSelection.toUpperCase()[0]);
 }
 
+function playRound(playerSelection, computerSelection) {
+    let formattedPlayerSelection = formatPlayerSelection(playerSelection);
+    // check the round result
+    // if player chooses rock
+    if (formattedPlayerSelection === "Rock") { 
+        // and then if computer chooses rock, its a draw
+        if(computerSelection === "Rock") {
+            console.log("Draw! Rock equal Rock");
+            return "draw";
+        // and then if computer chooses paper, player lose
+        } else if(computerSelection === "Paper") {
+            console.log("You Lose! Paper beats Rock");
+            return "lose";
+        // and then if computer chooses scissors, player win
+        } else {
+            console.log("You Win! Rock beats Scissors");
+            return "win";
+        }
+    // if player chooses paper
+    } else if(formattedPlayerSelection === "Paper") {
+    // and then if computer chooses rock, player wins
+        if(computerSelection === "Rock") {
+            console.log("You Win! Paper beats Rock");
+            return "win";
+    // and then if computer chooses paper, it's a draw
+        } else if(computerSelection === "Paper") {
+            console.log("Draw! Paper equal Paper");
+            return "draw";
+    // and then if computer chooses scissors, player lose
+        } else {
+            console.log("You Lose! Scissors beats Paper");
+            return "lose";
+        }
+    // if the player chooses scissors
+    } else {
+    // and then if computer chooses rock, player lose
+        if(computerSelection === "Rock") {
+            console.log("You Lose! Rock beats Scissors");
+            return "lose";
+    // and then if computer chooses paper, player wins
+        } else if(computerSelection === "Paper") {
+            console.log("You Win! Scissors beats Paper");
+            return "win";
+    // and then if computer chooses scissors, it's a draw
+        } else {
+            console.log("Draw! Scissors equal Scissors");
+            return "draw";
+        }
+    }
+}
+
 
 game();
