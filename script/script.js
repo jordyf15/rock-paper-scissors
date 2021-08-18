@@ -31,7 +31,60 @@ function setRoundResult(playerWin, computerWin, playerOption, computerOption) {
 
 }
 
+function resetGame(){
+    console.log('reset');
+    const playerOptionDisplay = document.querySelector('#player-option');
+    const computerOptionDisplay = document.querySelector('#computer-option');
+    const playerScoreDisplay = document.querySelector('#player-score');
+    const computerScoreDisplay = document.querySelector('#computer-score');
+    const roundResult = document.querySelector('#round-result');
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
+    roundResult.textContent ='';
+    playerOptionDisplay.innerHTML ="";
+    computerOptionDisplay.innerHTML="";
+}
+
+function checkWinner(){
+    const main = document.querySelector('main');
+    const popUpBackground = document.createElement('div');
+    popUpBackground.id = "pop-up-background";
+    popUpBackground.addEventListener('click',() => {
+        main.removeChild(popUpBackground);
+    });
+        
+    const popUpContainer = document.createElement('div');
+    popUpContainer.id = 'pop-up-container';
+        
+    const popUpResult = document.createElement('p');
+    popUpResult.id = 'pop-up-result';
+    popUpResult.textContent = playerScore===5?'You Win!':'You Lose!';
+    popUpContainer.appendChild(popUpResult);
+
+    const popUpQuestion = document.createElement('p');
+    popUpQuestion.id = 'pop-up-question';
+    popUpQuestion.textContent = 'Do you want to play again?';
+    popUpContainer.appendChild(popUpQuestion);
+
+    const popUpButton = document.createElement('button');
+    popUpButton.id = 'pop-up-button';
+    popUpButton.textContent = "Restart";
+    popUpButton.addEventListener('click',() =>{
+        resetGame();
+    });
+
+    popUpContainer.appendChild(popUpButton);
+    popUpBackground.appendChild(popUpContainer);
+    main.appendChild(popUpBackground);
+}
+
 function playRound(playerSelection, computerSelection) {
+    if(playerScore === 5 || computerScore === 5){
+        checkWinner();
+        return;
+    }  
     const playerOptionDisplay = document.querySelector('#player-option');
     const computerOptionDisplay = document.querySelector('#computer-option');
 
