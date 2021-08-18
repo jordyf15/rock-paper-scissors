@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
-    <script src="./script.js"></script>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <div>
+            <p>Score</p>
+            <span>Player: <span id="player-score"></span></span>
+            <span>Computer: <span id="computer-score"></span></span>
+        </div>
+        <div>
+            <span id="player-option"></span>
+            <span id="computer-option"></span>
+            <p id="round-result"></p>
+        </div>
+        <button id="btn-paper"><i class="far fa-hand-paper"></i></button>
+        <button id="btn-rock"><i class="far fa-hand-rock"></i></button>
+        <button id="btn-scissor"><i class="far fa-hand-scissors"></i></i></button>
+    </main>
+    <footer>Copyright © 2021 jordyf15</footer>
+    <script src="./script/script.js"></script>
 </body>
 </html>

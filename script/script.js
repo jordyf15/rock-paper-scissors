@@ -69,26 +69,3 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
-
-function game() {
-    let playerScore=0;
-    let computerScore = 0;
-    for(let i = 0; i<5; i++) {
-        let playerSelection = prompt("Input between rock, paper, and scissors: ", "paper");
-        let result = playRound(playerSelection, computerPlay());
-        if (result === "win"){
-            playerScore++;
-        } else if(result==="lose"){
-            computerScore++;
-        }
-    }
-    if(playerScore > computerScore) {
-        console.log("The winner is Player");
-    } else if(computerScore > playerScore) {
-        console.log("The winner is Computer");
-    } else {
-        console.log("It's a draw");
-    }
-}
-
-game();
