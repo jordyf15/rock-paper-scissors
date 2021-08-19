@@ -10,7 +10,8 @@ body{
     min-height: 100vh;
     overflow: hidden;
     margin: 0px;
-    background: repeating-linear-gradient(to bottom,#061e0f ,#192e22 5px);
+    /* background: repeating-linear-gradient(to bottom,#061e0f ,#192e22 5px); */
+    background-color: black;
     text-align: center;
     font-family: monospace;
 }
@@ -55,6 +56,10 @@ button{
     background: none;
     border: 2px solid #1afe80;
 }
+button:hover {
+    color: #009432;
+    border: 2px solid #009432;
+}
 .far {
     font-size: 50px;
 }
@@ -64,6 +69,44 @@ button{
 footer{
     color:#1afe80;
     margin-bottom: 10px;
+}
+
+#pop-up-background{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    /* display: inline-flex; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pop-up-container{
+    background-color: black;
+    border: 2px solid #1afe80;
+    padding: 10px 0px;
+}
+#pop-up-result{
+    border-bottom: 2px solid #1afe80;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+#pop-up-question{
+    padding: 0 15px;
+}
+#pop-up-button{
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #1afe80;
+}
+
+footer a:hover{
+    color: #009432;
+    text-decoration: underline;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -84,6 +127,16 @@ footer{
         font-size: 20px;
     }
 
+    #pop-up-container {
+        font-size: 18px;
+    }
+
+    #pop-up-button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+
     .far {
         font-size: 70px;
     }
@@ -93,6 +146,10 @@ footer{
 
     footer{
         font-size: 15px;
+    }
+
+    .fa-github{
+        font-size: 20px;
     }
 }
 
